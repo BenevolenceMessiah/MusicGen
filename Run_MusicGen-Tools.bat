@@ -77,7 +77,7 @@ echo    Note the Gradio Installation requires Python 3.9 Apparently,
 echo    (according to a random forum), the AudioCraft dependency has 
 echo    been tested with Python 10. This is the default python version.
 echo    Edit py 3.10 to py 3.9 in the environment script under the 
-echo    installer section of this file. 
+echo    installer section of this file if you have any problems. 
 echo 3) Run remotely via Google Colab Notebook.
 echo 4) Run remotely via HuggingFace.
 echo 5) Finetuning Options...
@@ -193,7 +193,6 @@ echo Installation complete.
 echo ---------------------------------------------------------------
 goto Menu1
 
-
 :LaunchGoogleColab
 echo ---------------------------------------------------------------
 echo Launching Google Colab. You may close the excess CMD window.
@@ -213,7 +212,30 @@ echo ---------------------------------------------------------------
 echo Launching Finetuning Options...
 echo This feature is incomplete at this time...
 echo ---------------------------------------------------------------
-timeout /t -1
+echo D) Finetune MusicGen (Vanilla) via Google Colab
+echo E) Finetune MusicGen (Braindead (Includes Scraper)) via Google Colab
+echo M) Main Menu
+echo C) Exit
+echo ---------------------------------------------------------------
+
+set /P option=Enter your choice:
+if %option% == D goto Finetune1
+if %option% == E goto Finetune2
+if %option% == M goto Menu1
+if %option% == C goto End
+
+:Finetune1
+echo ---------------------------------------------------------------
+echo Launching vanilla Finetuning. You may close the excess CMD window.
+echo ---------------------------------------------------------------
+start start https://colab.research.google.com/drive/13tbcC3A42KlaUZ21qvUXd25SFLu8WIvb?usp=sharing
+goto Menu1
+
+:Finetune2
+echo ---------------------------------------------------------------
+echo Launching Braindead Finetuning. You may close the excess CMD window.
+echo ---------------------------------------------------------------
+start start https://colab.research.google.com/drive/1VX8tMAfyWVEHZiyviuovUgKXq1GpKcdR
 goto Menu1
 
 :LaunchGradio

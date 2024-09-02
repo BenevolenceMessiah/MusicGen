@@ -1,0 +1,7 @@
+/.venv
+/audio
+/models
+/datasets
+/MusicGen-WebUI
+/Audio_Assets
+MusicGen-CLI.py
